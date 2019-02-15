@@ -2,6 +2,7 @@ import React from 'react';
 
 class GoogleMap extends React.Component {
   componentDidMount() {
+    // eslint-disable-next-line
     new google.maps.Map(this.refs.map, {
       zoom: 12,
       center: {
@@ -12,7 +13,7 @@ class GoogleMap extends React.Component {
   }
 
   render() {
-    return <div ref="map" />
+    return <div ref="map" />;
   }
 }
 
