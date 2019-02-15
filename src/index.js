@@ -9,10 +9,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './store/store';
 
-const createStoreWithMiddleware = applyMiddleware([thunk])(createStore);
-
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(rootReducer)}>
+  <Provider store={createStore(rootReducer, applyMiddleware(thunk))}>
     <App />
   </Provider>,
   document.getElementById('root')
