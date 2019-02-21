@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { fetchWeather } from '../store/actions/weather';
+import styles from './SearchBar.module.scss';
+import { fetchWeather } from '../../store/actions/weather';
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
   constructor(props) {
     super(props);
 
@@ -29,18 +30,16 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
+      <form onSubmit={this.onFormSubmit} className={styles.searchForm}>
         <input
-          placeholder="Get a five-day forecast in your favourite cities"
-          className="form-control"
+          placeholder="Get a five-day forecast in your favourite cities in Spain"
           value={this.state.term}
           onChange={this.onInputChange}
+          className={styles.searchFormInput}
         />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">
-            Submit
-          </button>
-        </span>
+        <button type="submit" className={styles.searchFormButton}>
+          Submit
+        </button>
       </form>
     );
   }

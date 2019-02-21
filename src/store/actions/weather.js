@@ -7,7 +7,7 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 export function fetchWeather(city) {
   return async dispatch => {
-    const url = `${ROOT_URL}&q=${city},us`;
+    const url = `${ROOT_URL}&q=${city},es&units=metric`;
     const response = await axios.get(url);
 
     dispatch({

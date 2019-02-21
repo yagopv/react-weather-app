@@ -1,0 +1,32 @@
+@import '../../variables.scss';
+
+.weatherListContainer {
+  width: 100%;
+  overflow-x: auto;
+  .weatherList {
+    width: 100%;
+    .headerRow {
+      border-bottom: 1px solid $black;
+      .headerCell {
+        padding: 10px 0;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    .bodyCell {
+      padding: 30px 10px;
+      border-bottom: 1px solid $black;
+      vertical-align: middle;
+      svg {
+        height: 150px;
+      }
+      &:first-of-type,
+      &:first-of-type > div {
+        height: 200px;
+        width: 250px;
+      }
+    }
+  }
+}

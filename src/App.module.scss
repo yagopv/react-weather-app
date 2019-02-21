@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+:global {
+  @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+  html,
+  body {
+    font-family: 'Raleway', sans-serif;
+    height: 100%;
+    background: $yellow;
+    font-size: 100%;
+    overflow: auto;
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: $black;
+    }
+  }
+
+  main {
+    padding: 30px 20px;
+  }
+}

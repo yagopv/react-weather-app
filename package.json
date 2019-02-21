@@ -11,10 +11,12 @@
     "react-scripts": "2.1.5",
     "react-sparklines": "^1.7.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "simple-css-reset": "^3.0.0"
   },
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "eslint-plugin-react-hooks": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,7 +25,13 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error"
+    }
   },
   "browserslist": [
     ">0.2%",

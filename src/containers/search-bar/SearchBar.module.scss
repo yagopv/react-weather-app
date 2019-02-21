@@ -1,0 +1,35 @@
+@import '../../variables.scss';
+
+.searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+
+  .searchFormInput {
+    height: 40px;
+    width: 500px;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-width: 0 0 2px 0;
+    border-color: $black;
+    border-style: solid;
+    background: $yellow;
+    color: $black;
+    outline: none;
+    &::placeholder {
+      color: $black;
+      opacity: 0.5;
+    }
+  }
+
+  .searchFormButton {
+    background-color: $black;
+    color: $white;
+    font-weight: bold;
+    font-size: 1rem;
+    height: 40px;
+    width: 100px;
+    margin-left: 10px;
+  }
+}
