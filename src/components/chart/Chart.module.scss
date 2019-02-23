@@ -1,12 +1,15 @@
-.info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 5px 0;
+.chartContainer {
+  text-align: center;
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
 
-  .units {
-    position: relative;
-    top: 2px;
-    left: 2px;
+    .units {
+      position: relative;
+      top: 2px;
+      left: 2px;
+    }
   }
 }

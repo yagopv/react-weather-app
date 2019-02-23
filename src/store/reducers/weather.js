@@ -1,9 +1,34 @@
-import { FETCH_WEATHER } from '../actions/weather';
+import {
+  FETCH_WEATHER,
+  FETCH_WEATHER_SUCCESS,
+  FETCH_WEATHER_FAILED
+} from '../actions/weather';
 
-export default function(state = [], action) {
-  switch (action.type) {
+const initialState = {
+  isFetching: false,
+  weatherData: [],
+  error: null
+};
+
+export default function(state = initialState, { type, payload }) {
+  switch (type) {
     case FETCH_WEATHER:
-      return [action.payload.data, ...state];
+      return {
+        ...state,
+        isFetching: true
+      };
+    case FETCH_WEATHER_SUCCESS:
+      return {
+        isFetching: false,
+        weatherData: [payload.data, ...state.weatherData],
+        error: null
+      };
+    case FETCH_WEATHER_FAILED:
+      return {
+        ...state,
+        isFetching: false,
+        error: payload
+      };
     default:
       return state;
   }

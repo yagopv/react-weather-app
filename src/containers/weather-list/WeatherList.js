@@ -31,9 +31,25 @@ class WeatherList extends React.Component {
     );
   }
 
+  renderLoading(isFetching) {
+    return isFetching ? <p className={styles.loading}>Loading ...</p> : '';
+  }
+
+  renderError(error) {
+    if (!error) {
+      return null;
+    }
+
+    return <p className={styles.error}>{error.toUpperCase()}</p>;
+  }
+
   render() {
+    const { weatherData, error, isFetching } = this.props.weather;
+
     return (
       <div className={styles.weatherListContainer}>
+        {this.renderLoading(isFetching)}
+        {this.renderError(error)}
         <table className={styles.weatherList}>
           <thead>
             <tr className={styles.headerRow}>
@@ -43,7 +59,7 @@ class WeatherList extends React.Component {
               <th className={styles.headerCell}>Pressures (hPa)</th>
             </tr>
           </thead>
-          <tbody>{this.props.weather.map(this.renderWeather)}</tbody>
+          <tbody>{weatherData.map(this.renderWeather)}</tbody>
         </table>
       </div>
     );
