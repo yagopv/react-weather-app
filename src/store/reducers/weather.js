@@ -20,7 +20,12 @@ export default function(state = initialState, { type, payload }) {
     case FETCH_WEATHER_SUCCESS:
       return {
         isFetching: false,
-        weatherData: [payload.data, ...state.weatherData],
+        weatherData: [
+          payload.data,
+          ...state.weatherData.filter(
+            data => data.city.id !== payload.data.city.id
+          )
+        ],
         error: null
       };
     case FETCH_WEATHER_FAILED:

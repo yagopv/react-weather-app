@@ -7,14 +7,14 @@ import GoogleMap from '../../components/google-map/GoogleMap';
 
 class WeatherList extends React.Component {
   renderWeather(cityData) {
-    const name = cityData.city.name;
+    const { id } = cityData.city;
+    const { lat, lon } = cityData.city.coord;
     const temps = cityData.list.map(weather => weather.main.temp);
     const humidities = cityData.list.map(weather => weather.main.humidity);
     const pressures = cityData.list.map(weather => weather.main.pressure);
-    const { lat, lon } = cityData.city.coord;
 
     return (
-      <tr key={name}>
+      <tr key={id}>
         <td className={styles.bodyCell}>
           <GoogleMap lat={lat} lon={lon} />
         </td>
