@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// Class component
 class GoogleMap extends Component {
   componentDidMount() {
     // eslint-disable-next-line

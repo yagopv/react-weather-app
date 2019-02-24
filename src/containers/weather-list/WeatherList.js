@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import styles from './WeatherList.module.scss';
 import Chart from '../../components/chart/Chart';
 import GoogleMap from '../../components/google-map/GoogleMap';
 
-class WeatherList extends React.Component {
+class WeatherList extends Component {
   renderWeather(cityData) {
     const { id } = cityData.city;
     const { lat, lon } = cityData.city.coord;

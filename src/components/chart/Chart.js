@@ -11,6 +11,7 @@ function average(data) {
   return round(sum(data) / data.length);
 }
 
+// Function component with arrow
 const ChartInfo = props => {
   return (
     <div className={styles.info}>
@@ -19,6 +20,7 @@ const ChartInfo = props => {
   );
 };
 
+// Function component
 function Chart(props) {
   return (
     <div className={styles.chartContainer}>
