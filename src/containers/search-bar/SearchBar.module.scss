@@ -12,20 +12,20 @@
     padding: 10px 0;
     font-size: 1rem;
     border-width: 0 0 2px 0;
-    border-color: $black;
+    border-color: $white;
     border-style: solid;
     background: $main;
-    color: $black;
+    color: $white;
     outline: none;
     &::placeholder {
-      color: $black;
+      color: $white;
       opacity: 0.5;
     }
   }
 
   .searchFormButton {
-    background-color: $black;
-    color: $white;
+    background-color: $white;
+    color: $main;
     font-weight: bold;
     font-size: 1rem;
     height: 40px;
