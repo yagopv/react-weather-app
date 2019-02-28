@@ -15,7 +15,8 @@
   .weatherList {
     width: 100%;
     .headerRow {
-      border-bottom: 1px solid $black;
+      border-bottom: 1px solid $white;
+      color: $white;
       .headerCell {
         padding: 10px 0;
         font-size: 1rem;
@@ -26,7 +27,7 @@
 
     .bodyCell {
       padding: 30px 10px;
-      border-bottom: 1px solid $black;
+      border-bottom: 1px solid $white;
       vertical-align: middle;
       svg {
         height: 150px;
