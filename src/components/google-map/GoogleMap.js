@@ -1,23 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import useMap from './useMap';
 
 // Class component
-class GoogleMap extends Component {
-  componentDidMount() {
-    // eslint-disable-next-line
-    new google.maps.Map(this.refs.map, {
-      zoom: 12,
-      mapTypeId: 'terrain',
-      center: {
-        lat: this.props.lat,
-        lng: this.props.lon
-      },
-      disableDefaultUI: true
-    });
-  }
+function GoogleMap({ lat, lon }) {
+  const { mapContainer } = useMap(lat, lon);
 
-  render() {
-    return <div ref="map" />;
-  }
+  return <div ref={mapContainer} />;
 }
 
 export default GoogleMap;

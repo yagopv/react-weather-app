@@ -1,50 +1,35 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import styles from './SearchBar.module.scss';
 import { fetchWeather } from '../../store/actions/weather';
 
-class SearchBar extends Component {
-  constructor(props) {
-    super(props);
+function SearchBar({ fetchWeather }) {
+  const [term, setTerm] = useState('');
 
-    this.state = { term: '' };
-
-    this.onInputChange = this.onInputChange.bind(this);
-    this.onFormSubmit = this.onFormSubmit.bind(this);
-  }
-
-  onInputChange(event) {
-    this.setState({
-      term: event.target.value
-    });
-  }
-
-  onFormSubmit(event) {
+  const onFormSubmit = event => {
     event.preventDefault();
 
-    if (this.state.term) {
-      this.props.fetchWeather(this.state.term);
-      this.setState({ term: '' });
+    if (term) {
+      fetchWeather(term);
+      setTerm('');
     }
-  }
+  };
 
-  render() {
-    return (
-      <form onSubmit={this.onFormSubmit} className={styles.searchForm}>
-        <input
-          placeholder="Get a five-day forecast in your favourite cities in Spain"
-          value={this.state.term}
-          onChange={this.onInputChange}
-          className={styles.searchFormInput}
-        />
-        <button type="submit" className={styles.searchFormButton}>
-          Submit
-        </button>
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={onFormSubmit} className={styles.searchForm}>
+      <input
+        placeholder="Get a five-day forecast in your favourite cities in Spain"
+        value={term}
+        onChange={event => setTerm(event.target.value)}
+        className={styles.searchFormInput}
+      />
+      <button type="submit" className={styles.searchFormButton}>
+        Submit
+      </button>
+    </form>
+  );
 }
 
 function mapDispatchToProps(dispatch) {
