@@ -48,21 +48,23 @@ function WeatherList({ weather }) {
     <div className={styles.weatherListContainer}>
       <Loading isFetching={isFetching} />
       <Error error={error} />
-      <table className={styles.weatherList}>
-        <thead>
-          <tr className={styles.headerRow}>
-            <th className={styles.headerCell}>City </th>
-            <th className={styles.headerCell}>Temperature (&#8451;) </th>
-            <th className={styles.headerCell}>Humidities (%) </th>
-            <th className={styles.headerCell}>Pressures (hPa)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {weatherData.map(weather => (
-            <WeatherRow data={weather} key={weather.city.id} />
-          ))}
-        </tbody>
-      </table>
+      {weatherData.length > 0 && (
+        <table className={styles.weatherList}>
+          <thead>
+            <tr className={styles.headerRow}>
+              <th className={styles.headerCell}>City </th>
+              <th className={styles.headerCell}>Temperature (&#8451;) </th>
+              <th className={styles.headerCell}>Humidities (%) </th>
+              <th className={styles.headerCell}>Pressures (hPa)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {weatherData.map(weather => (
+              <WeatherRow data={weather} key={weather.city.id} />
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }
